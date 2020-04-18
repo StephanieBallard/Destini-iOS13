@@ -9,12 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var storyLabel: UILabel!
     @IBOutlet weak var choice1Button: UIButton!
     @IBOutlet weak var choice2Button: UIButton!
     
-    var stories = [Story(storyTitle: "You see a fork in the road.", choice1: "You take a left", choice2:                  "You take a right"),
+    var stories = [Story(storyTitle: "You see a fork in the road.", choice1: "You take a left", choice2: "You take a right"),
                    Story(storyTitle: "You see a tiger", choice1: "Shout for help", choice2: "Play dead"),
                    Story(storyTitle: "You find a treasure chest", choice1: "Open it", choice2: "Check for traps")
     ]
@@ -24,9 +24,21 @@ class ViewController: UIViewController {
         storyLabel.text = stories[0].storyTitle
         choice1Button.setTitle(stories[0].choice1, for: .normal)
         choice2Button.setTitle(stories[0].choice2, for: .normal)
-
+        
     }
-
-
+    
+    @IBAction func choice1Button(_ sender: UIButton) {
+        storyLabel.text = stories[1].storyTitle
+        choice1Button.setTitle(stories[1].choice1, for: .normal)
+        choice2Button.setTitle(stories[1].choice2, for: .normal)
+    }
+    
+    @IBAction func choice2Button(_ sender: UIButton) {
+        
+        storyLabel.text = stories[2].storyTitle
+        choice1Button.setTitle(stories[2].choice1, for: .normal)
+        choice2Button.setTitle(stories[2].choice2, for: .normal)
+        
+    }
 }
 
